@@ -34,7 +34,7 @@ export class AboutPage {
 
   btnBeep() {
     console.log("beep click!");
-    this.dialogs.beep(3);
+    this.dialogs.beep(1);
   }
 
 }
