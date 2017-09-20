@@ -11,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Vibration } from '@ionic-native/vibration';
+import { Dialogs } from '@ionic-native/dialogs';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -35,6 +37,7 @@ import { Vibration } from '@ionic-native/vibration';
     StatusBar,
     SplashScreen,
     Vibration,
+    Dialogs,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

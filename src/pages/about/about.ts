@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
+import { Dialogs } from '@ionic-native/dialogs';
 
 @Component({
   selector: 'page-about',
@@ -10,17 +11,22 @@ export class AboutPage {
 
   constructor(
     public navCtrl: NavController,
-    public vibration: Vibration
+    public vibration: Vibration,
+    public dialogs: Dialogs
   ) {
 
   }
 
   btnAlert() {
     console.log("alert click!");
+    this.dialogs.alert('Hello world')
+      .then(() => console.log('Dialog dismissed'))
+      .catch(e => console.log('Error displaying dialog', e));
   }
 
   btnConfirm() {
     console.log("confirm click!");
+
   }
 
   btnVibrate() {
