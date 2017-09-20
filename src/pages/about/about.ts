@@ -19,12 +19,12 @@ export class AboutPage {
 
   btnAlert() {
     console.log("alert click!");
-    this.dialogs.alert('Hello world','title','Ok');
+    this.dialogs.alert('Hello world','Title','Ok');
   }
 
   btnConfirm() {
     console.log("confirm click!");
-    this.dialogs.confirm('your ok?','title',['Cancel','Ok']);
+    this.dialogs.confirm('Are you ok?','Title',['No','Ok']);
   }
 
   btnVibrate() {
@@ -34,7 +34,7 @@ export class AboutPage {
 
   btnBeep() {
     console.log("beep click!");
-    this.dialogs.beep(300);
+    this.dialogs.beep(3);
   }
 
 }
