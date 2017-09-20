@@ -12,6 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Vibration } from '@ionic-native/vibration';
 import { Dialogs } from '@ionic-native/dialogs';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { Dialogs } from '@ionic-native/dialogs';
     SplashScreen,
     Vibration,
     Dialogs,
+    BarcodeScanner,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

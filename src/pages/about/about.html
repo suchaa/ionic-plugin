@@ -7,7 +7,10 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-input type="text" [(ngModel)]="codeData"></ion-input>
+  <br>
+  <button (click)="btnScan()" ion-button full>Scan</button>
+  <br>
   <button (click)="btnAlert()" ion-button color="light" full>Alert</button>
   <button (click)="btnConfirm()" ion-button full>Confirm</button>
   <button (click)="btnVibrate()" ion-button color="secondary" full>Vibrate</button>
