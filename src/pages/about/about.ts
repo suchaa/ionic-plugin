@@ -19,14 +19,12 @@ export class AboutPage {
 
   btnAlert() {
     console.log("alert click!");
-    this.dialogs.alert('Hello world')
-      .then(() => console.log('Dialog dismissed'))
-      .catch(e => console.log('Error displaying dialog', e));
+    this.dialogs.alert('Hello world','title','Ok');
   }
 
   btnConfirm() {
     console.log("confirm click!");
-
+    this.dialogs.confirm('your ok?','title',['Cancel','Ok']);
   }
 
   btnVibrate() {
@@ -36,6 +34,7 @@ export class AboutPage {
 
   btnBeep() {
     console.log("beep click!");
+    this.dialogs.beep(300);
   }
 
 }
