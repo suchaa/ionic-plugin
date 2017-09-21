@@ -30,6 +30,8 @@ export class ContactPage {
       let base64Image = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       // Handle error
+      console.log(err);
+      
     });
   }
 
