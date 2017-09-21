@@ -7,11 +7,15 @@
 </ion-header>
 
 <ion-content>
-  
-  <img [src]="base64Image">
-  
-  <button (click)="btnTakeAphoto()" ion-button full>Take a photo</button>
-  <button (click)="btnUpload()" ion-button>Upload</button>
-  <button (click)="btnGallery()" ion-button>Gallery</button>
+  <ion-card>
+    <ion-card-content>
 
+
+      <img [src]="base64Image" *ngIf="base64Image">
+
+      <button (click)="btnTakeAphoto()" ion-button full>Take a photo</button>
+      <button (click)="btnUpload()" ion-button>Upload</button>
+      <button (click)="btnGallery()" ion-button>Gallery</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

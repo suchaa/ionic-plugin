@@ -8,6 +8,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class ContactPage {
 
+  public base64Image: string;
+
   constructor(
     public navCtrl: NavController,
     private camera: Camera
@@ -19,7 +21,9 @@ export class ContactPage {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      targetWidth: 1000,
+      targetHeight: 1000
     }
 
     this.camera.getPicture(options).then((imageData) => {
@@ -27,7 +31,7 @@ export class ContactPage {
       // If it's base64:
       //var image = document.getElementById('MyImage');
       //image.src = 'data:image/jpeg;base64,' + imageData;
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       // Handle error
       console.log(err);
@@ -36,29 +40,11 @@ export class ContactPage {
   }
 
   btnUpload() {
+   
 
   }
 
   btnGallery() {
-
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.ALLMEDIA
-    }
-
-    this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      //var image = document.getElementById('MyImage');
-      //image.src = 'data:image/jpeg;base64,' + imageData;
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-      // Handle error
-      console.log(err);
-      
-    });
 
   }
 
