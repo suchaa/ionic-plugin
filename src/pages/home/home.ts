@@ -14,7 +14,7 @@ export class HomePage {
 
   openApp(){
     let options: LaunchNavigatorOptions = {
-      start: 'London, ON',
+      start: '',
       //app: LaunchNavigator.APPS.UBER
     };
     
