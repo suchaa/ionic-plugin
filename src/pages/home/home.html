@@ -36,6 +36,18 @@
     </ion-item>
   </ion-list>
 
-  
+  <div>
+    
+    <ion-list>
+
+        <div *ngFor="let i of location">
+            <button ion-item (click)="openApplist(i)">
+                <h2>{{i.title}}</h2>
+                <h3>8.30-10.00 PM</h3>
+            </button>
+        </div>
+
+    </ion-list>
+</div>
 
 </ion-content>
