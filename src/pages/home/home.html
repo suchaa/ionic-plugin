@@ -41,9 +41,10 @@
     <ion-list>
 
         <div *ngFor="let i of location">
-            <button ion-item (click)="openApplist(i)">
+            <button ion-item (click)="open(i)">
                 <h2>{{i.title}}</h2>
                 <h3>8.30-10.00 PM</h3>
+                <button ion-button item-end (click)="openApplist(i)">google maps</button>
             </button>
         </div>
 

@@ -11,8 +11,8 @@ import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-na
 export class HomePage {
 
   location = [];
-  destination:string;
-  start:string;
+  destination: string;
+  start: string;
 
   constructor(public navCtrl: NavController, private launchNavigator: LaunchNavigator) {
     this.location = [
@@ -23,36 +23,41 @@ export class HomePage {
       { title: 'ห้วยขวาง', la: 13.76928, ln: 100.58133 },
       { title: 'สะพานพระราม 8', la: 13.76891, ln: 100.49721 }
     ];
-   
+
     this.start = '';
     this.destination = '13.76493, 100.53829';
   }
 
-  openApp(){
+  openApp() {
     let options: LaunchNavigatorOptions = {
       start: this.start,
       //app: LaunchNavigator.APPS.UBER
     };
-    
+
     this.launchNavigator.navigate(this.destination, options)
       .then(
-        success => console.log('Launched navigator'),
-        error => console.log('Error launching navigator', error)
+      success => console.log('Launched navigator'),
+      error => console.log('Error launching navigator', error)
       );
   }
 
-  openApplist(i){
+  open(i) {
+    console.log('click!');
+
+  }
+
+  openApplist(i) {
     let options: LaunchNavigatorOptions = {
       start: '',
       //app: LaunchNavigator.APPS.UBER
     };
-    let dest = i.la+ ',' +i.ln;
+    let dest = i.la + ',' + i.ln;
     console.log(dest);
-    
+
     this.launchNavigator.navigate(dest, options)
       .then(
-        success => console.log('Launched navigator'),
-        error => console.log('Error launching navigator', error)
+      success => console.log('Launched navigator'),
+      error => console.log('Error launching navigator', error)
       );
   }
 
