@@ -15,7 +15,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private launchNavigator: LaunchNavigator) {
     this.start = '';
-    this.destination = 'Westminster, London, UK';
+    this.destination = '13.7649303, 100.5361015';
   }
 
   openApp(){
