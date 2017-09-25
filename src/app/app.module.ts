@@ -14,6 +14,7 @@ import { Vibration } from '@ionic-native/vibration';
 import { Dialogs } from '@ionic-native/dialogs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Camera } from '@ionic-native/camera';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { Camera } from '@ionic-native/camera';
     Dialogs,
     BarcodeScanner,
     Camera,
+    LaunchNavigator,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
