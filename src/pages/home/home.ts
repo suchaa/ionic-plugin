@@ -17,7 +17,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, private launchNavigator: LaunchNavigator) {
     this.location = [
       { title: 'กรุงเทพมหานคร', la: 13.75616, ln: 100.50108 },
-      { title: 'อนุสาวรีย์ชัยสมรภูมิ', la: 13.7649303, ln: 100.5361015 },
+      { title: 'อนุสาวรีย์ชัยสมรภูมิ', la: 13.76493, ln: 100.53829 },
       { title: 'รพ.พยาไท 2 อินเตอร์เนชันแนล', la: 13.76984, ln: 100.54044 },
       { title: 'เซ็นทรัลเวิลล์', la: 13.74600, ln: 100.54001 },
       { title: 'ห้วยขวาง', la: 13.76928, ln: 100.58133 },
