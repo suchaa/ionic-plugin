@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 
-declare var google;
+//declare var google;
 
 @Component({
   selector: 'page-home',
@@ -15,7 +15,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private launchNavigator: LaunchNavigator) {
     this.start = '';
-    this.destination = 'อนุสาวรีย์ชัยสมรภูมิ';
+    this.destination = '13.76493, 100.53829';
   }
 
   openApp(){
