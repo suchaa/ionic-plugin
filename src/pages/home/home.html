@@ -7,12 +7,10 @@
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+    This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
   </p>
   <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+    Take a look at the <code>src/pages/</code> directory to add or change tabs, update any existing page or create new pages.
   </p>
 
   <ion-list>
@@ -36,19 +34,35 @@
     </ion-item>
   </ion-list>
 
+
   <div>
-    
+
     <ion-list>
+      <ion-item-sliding #item *ngFor="let i of location">
 
-        <div *ngFor="let i of location">
-            <button ion-item (click)="open(i)">
-                <h2>{{i.title}}</h2>
-                <h3>8.30-10.00 PM</h3>
-                <button ion-button item-end (click)="openApplist(i)">google maps</button>
-            </button>
-        </div>
+        <!-- <div *ngFor="let i of location">
+          <button ion-item (click)="open(i)">
+              <h2>{{i.title}}</h2>
+              <h3>8.30-10.00 PM</h3> -->
+        <!-- <button ion-button item-end (click)="openApplist(i)">google maps</button> -->
+        <!-- </button>
+        </div> -->
 
+        <ion-item >
+          {{i.title}}
+        </ion-item>
+
+        <ion-item-options side="right" *ngFor="let i of location">
+          <button ion-button (click)="open(i)">Open</button>
+          <button ion-button color="secondary" (click)="openApplist(i)">Google maps</button>
+        </ion-item-options>
+
+        <ion-item-options side="left" *ngFor="let i of location">
+          <button ion-button color="danger" >Delete</button>
+        </ion-item-options>
+
+      </ion-item-sliding>
     </ion-list>
-</div>
+  </div>
 
 </ion-content>

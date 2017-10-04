@@ -1,14 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 
-//declare var google;
+declare var google;
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  @ViewChild('map') mapElement: ElementRef;
+
+  map: any;
+  marker = [];
+  title: string;
+  //directionsDisplay = new google.maps.DirectionsRenderer;
 
   location = [];
   destination: string;
@@ -26,6 +33,10 @@ export class HomePage {
 
     this.start = '';
     this.destination = '13.76493, 100.53829';
+  }
+
+  ionViewDidLoad() {
+    this.initMap();
   }
 
   openApp() {
@@ -59,6 +70,31 @@ export class HomePage {
       success => console.log('Launched navigator'),
       error => console.log('Error launching navigator', error)
       );
+  }
+
+  initMap() {
+    //  this.map = new google.maps.Map(this.mapElement.nativeElement, {
+    //    zoom: 11,
+    //    mapTypeId: 'roadmap',
+    //    center: { lat: 13.7706053, lng: 100.54143549999999 }
+    //  });
+    //   //this.directionsDisplay.setMap(this.map);
+
+    //   for (let i in this.location) {
+    //     this.marker[i] = new google.maps.Marker({
+    //       position: { lat: this.location[i].la, lng: this.location[i].ln },
+    //       map: this.map,
+    //       title: this.location[i].title
+    //     });
+
+    //     let getPosition = { lat: this.location[i].la, lng: this.location[i].ln };
+
+    //     google.maps.event.addListener(this.marker[i], 'click', function () {
+    //       this.map.setZoom(17);
+    //       this.map.setCenter(getPosition);
+    //     });
+    //   }
+
   }
 
 }
