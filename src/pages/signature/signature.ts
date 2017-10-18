@@ -19,10 +19,12 @@ export class SignaturePage {
   public signatureImage : any;
   Data:any;
   Img: any;
+  myDate = new Date().toDateString();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
     //this.signatureImage = navParams.get('signatureImage');
     this.Data = []
+    console.log(this.myDate);
 
     if (localStorage.getItem('Data')) {
       this.Data = JSON.parse(localStorage.getItem('Data'));

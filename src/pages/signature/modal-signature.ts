@@ -26,6 +26,7 @@ export class ModalSignaturePage {
   public signatureImage : any;
   Img:any;
   Data:any;
+  myDate = new Date().toDateString();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
    
@@ -58,7 +59,8 @@ export class ModalSignaturePage {
       Data2 = JSON.parse(localStorage.getItem('Data'));
       console.log('data: ', Data2);
       this.Data = {
-        Img: this.signatureImage
+        Img: this.signatureImage,
+        Date: this.myDate
       }
       
       Data2.push(this.Data);

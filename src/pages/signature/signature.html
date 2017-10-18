@@ -15,12 +15,13 @@
 <ion-content padding>
 
   <button ion-button full (click)='btnSignature()'>Signature</button>
-
+  To day: {{myDate}}
   <ion-card *ngFor="let i of Data; let i = index;">
     <ion-card-content >
         <button ion-button icon-only clear (click)="delete(i)" >
             <ion-icon ios="ios-close" md="md-close"></ion-icon>
         </button>
+        {{i.Date}}
       <div >
         <img [src]="i.Img" *ngIf="i.Img" />
       </div>
