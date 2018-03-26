@@ -20,13 +20,17 @@ export class ModalSignaturePage {
 
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 5,
-    'canvasWidth': 500,
-    'canvasHeight': 300
+    'canvasWidth': 400,
+    'canvasHeight': 200,
+    //'backgroundColor': '#f6fbff',
+    'penColor': '#666a73'
   };
   public signatureImage : any;
   Img:any;
   Data:any;
   myDate = new Date().toDateString();
+  isDrawing = false;
+  x = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
    
@@ -74,8 +78,14 @@ export class ModalSignaturePage {
   }
  
   drawStart() {
-    // will be notified of szimek/signature_pad's onBegin event
-    console.log('begin drawing');
+    this.isDrawing = true;
+    // this.x.push(this.isDrawing);
+    // console.log('start', this.x);
+  }
+
+  drawComp(){
+    this.isDrawing = false;
+    //console.log('end', this.isDrawing);
   }
 
   drawCancel(){
@@ -83,6 +93,8 @@ export class ModalSignaturePage {
   }
 
   drawClear(){
+    // this.x.pop();
+    // console.log(this.x);
     this.signaturePad.clear();
   }
 

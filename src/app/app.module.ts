@@ -18,6 +18,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Camera } from '@ionic-native/camera';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { SignaturePadModule } from 'angular2-signaturepad';
+//import { File } from '@ionic-native/file';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SignaturePadModule } from 'angular2-signaturepad';
     Dialogs,
     BarcodeScanner,
     Camera,
+    // File,
     LaunchNavigator,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

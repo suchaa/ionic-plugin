@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content padding>
-  <signature-pad [options]="signaturePadOptions" id="signatureCanvas"></signature-pad>
+  <signature-pad [options]="signaturePadOptions" id="signatureCanvas" (onBeginEvent)="drawStart()" (onEndEvent)="drawComp()"></signature-pad>
   <ion-grid>
     <ion-row>
       <ion-col col-4>

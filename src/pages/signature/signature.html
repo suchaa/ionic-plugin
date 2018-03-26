@@ -12,21 +12,26 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <button ion-button full (click)='btnSignature()'>Signature</button>
-  To day: {{myDate}}
+  <button class="btn" ion-button full (click)='btnSignature()'>Signature</button>
+  
   <ion-card *ngFor="let i of Data; let i = index;">
-    <ion-card-content >
-        <button ion-button icon-only clear (click)="delete(i)" >
-            <ion-icon ios="ios-close" md="md-close"></ion-icon>
+    <!-- <ion-card-header> -->
+      <ion-buttons end>
+        <button ion-button icon-only clear (click)="delete(i)">
+            {{i.Date}} <ion-icon ios="ios-close" md="md-close"></ion-icon>
         </button>
-        {{i.Date}}
-      <div >
+      </ion-buttons>
+    <!-- </ion-card-header> -->
+
+    <ion-card-content>
+
+      <div>
         <img [src]="i.Img" *ngIf="i.Img" />
       </div>
-      
+
     </ion-card-content>
   </ion-card>
-  
+
 </ion-content>
