@@ -81,6 +81,7 @@
     <plugin name="cordova-plugin-camera" spec="^2.4.1" />
     <plugin name="cordova-plugin-device" spec="^1.1.4" />
     <plugin name="cordova-plugin-dialogs" spec="^1.3.3" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
     <plugin name="cordova-plugin-googlemaps" spec="^2.0.10">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDANeEbrrWMraMLZEYL6HMewIM1Ccvtq2c" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyDy6fvLq4hs__XCvTKpf456m_4wxGfJ18I" />
@@ -92,5 +93,4 @@
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^6.0.8" />
     <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^4.0.5" />
-    <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
 </widget>

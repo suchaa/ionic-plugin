@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SignaturePage } from '../pages/signature/signature';
 import { ModalSignaturePage } from '../pages/signature/modal-signature';
+import { MapPage } from '../pages/map/map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +29,8 @@ import { SignaturePadModule } from 'angular2-signaturepad';
     HomePage,
     TabsPage,
     SignaturePage,
-    ModalSignaturePage
+    ModalSignaturePage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { SignaturePadModule } from 'angular2-signaturepad';
     HomePage,
     TabsPage,
     SignaturePage,
-    ModalSignaturePage
+    ModalSignaturePage,
+    MapPage
   ],
   providers: [
     StatusBar,

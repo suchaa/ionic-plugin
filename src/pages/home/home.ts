@@ -120,6 +120,7 @@ export class HomePage {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
+    //------------------------------
     this.mark(this.LatLng, this.map);
     this.getLatLng();
 
@@ -127,23 +128,30 @@ export class HomePage {
       content: document.getElementById('info')
     });
     this.infowindow.open(this.map, this.marker);
+    //------------------------------
 
-    // this.messagewindow = new google.maps.InfoWindow({
-    //   content: document.getElementById('message')
-    // });
-
-    // google.maps.event.addListener(this.map, 'click', function (event) {
-    //   this.marker = new google.maps.Marker({
-    //     position: event.latLng,
-    //     map: this.map
-    //   });
-    //   console.log('click!');
-    //   google.maps.event.addListener(this.marker, 'click', function () {
-    //     this.infowindow.open(this.map, this.marker);
-    //   });
-    // });
-
+  // search map
+  //   this.geocoder = new google.maps.Geocoder();
+  //   document.getElementById('submit').addEventListener('click', function() {
+  //     this.geocodeAddress(this.geocoder, this.map);
+  //   });
   }
+
+  // geocodeAddress(geocoder, resultsMap) {
+  //   var address = document.getElementById('address') as HTMLInputElement;
+  //   address.value;
+  //   geocoder.geocode({'address': address}, function(results, status) {
+  //     if (status === 'OK') {
+  //       resultsMap.setCenter(results.geometry.location);
+  //       var marker = new google.maps.Marker({
+  //         map: resultsMap,
+  //         position: results.geometry.location
+  //       });
+  //     } else {
+  //       alert('Geocode was not successful for the following reason: ' + status);
+  //     }
+  //   });
+  // }
 
   /** marker on map */
   mark(LatLng, map) {
@@ -174,6 +182,7 @@ export class HomePage {
     });
   }
 
+  /** get current lat lng */
   geolocation() {
 
     // Try HTML5 geolocation.
@@ -191,18 +200,18 @@ export class HomePage {
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(displayLocationInfo);
+      
     }else{
       console.log('fail');
     }
     function displayLocationInfo(position) {
-      const lng = position.coords.longitude;
       const lat = position.coords.latitude;
-      document.getElementById('current').innerHTML = ' <p>Marker dropped: Current Lat: '+ lat.toFixed(5) +' Current Lng: '+ lng.toFixed(5) +'</p>';
-      console.log(`(Geolocation) lat: ${ lat.toFixed(5) } | lng: ${ lng.toFixed(5) }`);
+      const lng = position.coords.longitude;
+      document.getElementById('current').innerHTML = ' <p>Marker dropped: Current Lat: '+ lat +' Current Lng: '+ lng +'</p>';
+      console.log(`(Geolocation) lat: ${ lat } | lng: ${ lng }`);
       
       document.getElementById('lat').innerHTML = `<p>${ lat }</p>`;
       document.getElementById('lng').innerHTML = `<p>${ lng }</p>`;
-     
     }
 
   }
@@ -233,6 +242,9 @@ export class HomePage {
     //   })
     // }
   }
+
+  
+
 
 
 
