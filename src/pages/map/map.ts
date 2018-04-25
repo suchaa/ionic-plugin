@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, Input  } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 /**
  * Generated class for the MapPage page.
@@ -18,16 +19,31 @@ export class MapPage {
 
   @ViewChild('map') mapElement: ElementRef;
 
+  private todo : FormGroup;
+
   map: any;
   geocoder: any;
   LatLng = new google.maps.LatLng(13.76340,100.50671);
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private Customer;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+
+    
+    this.todo = this.formBuilder.group({
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+    });
+   
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
     this.initMap2();
+  }
+
+  logForm(){
+    console.log(this.todo.value)
   }
 
   initMap2() {
@@ -59,5 +75,11 @@ export class MapPage {
   //     }
   //   });
   // }
+
+
+  SaveCutomer(){
+    console.log("test");
+    
+  }
 
 }

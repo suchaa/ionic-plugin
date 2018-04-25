@@ -15,10 +15,23 @@
 
 <ion-content>
 
-  <div id="floating-panel">
+  <!-- <div id="floating-panel">
     <input id="address" type="textbox" value="Sydney, NSW">
     <input id="submit" type="button" value="Geocode">
   </div>
-  <div id="map"></div>
+  <div id="map"></div> -->
+
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Todo</ion-label>
+      <ion-input type="text" name="title"  formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea name="description" formControlName="description"></ion-textarea>
+    </ion-item>
+    <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+  </form>
+
 
 </ion-content>
